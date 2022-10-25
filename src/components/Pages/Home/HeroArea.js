@@ -4,12 +4,7 @@ const HeroArea = () => {
   return (
 
     <div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+
       <section className=" text-gray-100 ">
         <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
           <h1 className="text-4xl font-bold leading-none sm:text-5xl">Quisquam necessita vel
@@ -21,6 +16,7 @@ const HeroArea = () => {
             <button className="px-8 py-3 m-2 text-lg border rounded text-gray-50 border-gray-700">Learn more</button>
           </div>
         </div>
+        <p>lorem500</p>
       </section>
     </div>
   );

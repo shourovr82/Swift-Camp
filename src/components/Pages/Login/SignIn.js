@@ -85,11 +85,11 @@ const SignIn = () => {
       <br />
       <br />
       <br />
-      <div className='flex justify-center '>
+      <div className='flex justify-center mx-3 '>
 
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl form-background">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  ">
           <div className="card-body">
-            <form onSubmit={handleSubmitLogin}>
+            <form onSubmit={handleSubmitLogin} >
               <div className="form-control">
                 {
                   error && <p>{error}</p>
