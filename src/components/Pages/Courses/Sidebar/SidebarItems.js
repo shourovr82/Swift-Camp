@@ -11,7 +11,6 @@ const SidebarItems = ({ course }) => {
       <div className="flex flex-col justify-center max-w-3xl  text-center col-span-full lg:col-span-3 lg:text-left">
         <span className=" tracking-wider uppercase  text-xs mt-2 dark:text-violet-400">Step {id} - Nihil</span>
         <span className=" text-teal-900 font-bold md:text-2xl">{name}</span>
-        <span className="mt-4 dark:text-gray-300">Lorem ipsum dolor sit amet conarchitecto veritatis dolores, enim cons equatur nihil ipsum.</span>
         <button className="btn btn-sm my-2">By Now</button>
       </div>
     </div>
