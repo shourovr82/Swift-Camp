@@ -37,12 +37,10 @@ const SignIn = () => {
         const user = result.user;
         form.reset();
         if (user.emailVerified) {
-          // toast.success('Welcome to the Website');
           navigate(from, { replace: true })
         } else {
           setError('Your email is not Verified')
           logOutHandle();
-          // toast.error('Your email is not verified. Please verify your email address.')
         }
       })
       .catch(e => {
@@ -56,8 +54,7 @@ const SignIn = () => {
   const loginWithGoogle = () => {
     handleGoogleLogIn()
       .then(result => {
-        // toast.success('success')
-        navigate(from, { replace: true })
+        navigate(from, { replace: true });
       })
       .catch(e => {
         console.log(e);
@@ -67,7 +64,6 @@ const SignIn = () => {
     handleGithubLogin()
       .then(result => {
         navigate(from, { replace: true })
-        // toast.succces('Welcome to the Website')
       })
       .catch(e => {
         console.log(e.message)
@@ -89,6 +85,7 @@ const SignIn = () => {
           <div className="card-body">
             <form onSubmit={handleSubmitLogin} >
               <div className="form-control">
+
                 {
                   error && <p>{error}</p>
                 }

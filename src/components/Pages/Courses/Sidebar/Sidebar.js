@@ -2,6 +2,10 @@ import React from 'react';
 import SidebarItems from './SidebarItems';
 
 const Sidebar = ({ courses }) => {
+
+
+
+
   return (
     <aside className="w-full border-r-4  sm:w-80  dark:text-gray-100">
       <nav className="space-y-8 text-sm ">

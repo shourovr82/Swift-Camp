@@ -61,6 +61,19 @@ const Header = () => {
                 Courses
               </Link>
             </li>
+
+
+            <li>
+              <Link
+                to="/blogs"
+                aria-label="Courses pricing"
+                title="Courses pricing"
+                className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                BLOGS
+              </Link>
+            </li>
+
             <li>
               <Link
                 href="/courses"
@@ -71,16 +84,13 @@ const Header = () => {
                 FAQ
               </Link>
             </li>
-            <li>
-              <a
-                href="/"
-                aria-label="Courses pricing"
-                title="Courses pricing"
-                className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                BLOG
-              </a>
-            </li>
+
+
+
+
+
+
+
             <li>
               <a
                 href="/"

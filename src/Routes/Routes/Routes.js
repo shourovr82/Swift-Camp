@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../components/Layout/Main";
+import Blog from "../../components/Pages/Blog/Blog";
 import CheckOut from "../../components/Pages/Courses/checkout/CheckOut";
 import CourseDetails from "../../components/Pages/Courses/Courses/CourseDetails";
 import Courses from "../../components/Pages/Courses/Courses/Courses";
+import ErrorPage from "../../components/Pages/errorpage/ErrorPage";
 import Home from "../../components/Pages/Home/Home";
 import SignIn from "../../components/Pages/Login/SignIn";
 import SignUp from "../../components/Pages/Login/SignUp";
@@ -16,6 +18,7 @@ export const routes = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -42,7 +45,12 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/checkout/:id',
+        loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.id}`),
         element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
+      },
+      {
+        path: '/blogs',
+        element: <Blog></Blog>
       }
     ]
 
