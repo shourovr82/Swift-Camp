@@ -1,48 +1,25 @@
 import React from 'react';
+import SidebarItems from './SidebarItems';
 
-const Sidebar = () => {
+const Sidebar = ({ courses }) => {
+  console.log(courses);
   return (
-    <aside className="w-full border-r-4 p-6 sm:w-60  dark:text-gray-100">
-      <br />
-      <br />
+    <aside className="w-full border-r-4  sm:w-80  dark:text-gray-100">
       <nav className="space-y-8 text-sm">
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Getting Started</h2>
-          <div className="flex flex-col space-y-1">
-            <a rel="noopener noreferrer" href="#">Installation</a>
-            <a rel="noopener noreferrer" href="#">Plugins</a>
-            <a rel="noopener noreferrer" href="#">Migrations</a>
-            <a rel="noopener noreferrer" href="#">Appearance</a>
-            <a rel="noopener noreferrer" href="#">Mamba UI</a>
+        <section className="dark:bg-gray-800 dark:text-gray-100">
+          <div className="container mx-auto flex flex-col p-6">
+            <h2 className="py-4 text-3xl font-bold text-center">All Courses</h2>
+            <div className="divide-y divide-gray-700">
+
+              {
+                courses.map(course => <SidebarItems
+                  key={course.id}
+                  course={course}
+                ></SidebarItems>)
+              }
+            </div>
           </div>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Dashboard</h2>
-          <div className="flex flex-col space-y-1">
-            <a rel="noopener noreferrer" href="#">Header</a>
-            <a rel="noopener noreferrer" href="#">Drawer</a>
-            <a rel="noopener noreferrer" href="#">Page Title</a>
-            <a rel="noopener noreferrer" href="#">Menus</a>
-            <a rel="noopener noreferrer" href="#">Sidebar</a>
-            <a rel="noopener noreferrer" href="#">Footer</a>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Pages</h2>
-          <div className="flex flex-col space-y-1">
-            <a rel="noopener noreferrer" href="#">Homepage</a>
-            <a rel="noopener noreferrer" href="#">Users</a>
-            <a rel="noopener noreferrer" href="#">Tools</a>
-            <a rel="noopener noreferrer" href="#">Settings</a>
-          </div>
-        </div>
-        <div className="space-y-2">
-          <h2 className="text-sm font-semibold tracking-widest uppercase dark:text-gray-400">Misc</h2>
-          <div className="flex flex-col space-y-1">
-            <a rel="noopener noreferrer" href="#">Tutorials</a>
-            <a rel="noopener noreferrer" href="#">Changelog</a>
-          </div>
-        </div>
+        </section>
       </nav>
     </aside>
   );

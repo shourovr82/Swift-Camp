@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
 
-    <div className=' sticky w-full bg-opacity- bg-red-800'>
+    <div className='  w-full bg-opacity- bg-red-800'>
       <div className="px-4  bg-transparent  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex text-white items-center justify-between ">
           <div className='relative'>
@@ -40,6 +40,15 @@ const Header = () => {
 
 
           <ul className="flex items-center hidden space-x-8 lg:flex">
+            <li>
+              <Link
+                to="/"
+                title="Home"
+                className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                Home
+              </Link>
+            </li>
             <li>
               <Link
                 to="/courses"

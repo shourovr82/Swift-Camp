@@ -7,13 +7,11 @@ import CourseItem from './CourseItem'
 
 const Courses = () => {
   const courses = useLoaderData();
-  console.log(courses);
-
   return (
     <div className=''>
       <div className=" bg-slate-500 lg:flex justify-between	">
         <div className='relative'>
-          <Sidebar></Sidebar>
+          <Sidebar courses={courses}></Sidebar>
         </div>
         <div className=''>
           <br />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CourseItem = ({ course }) => {
-  console.log(course);
+  // console.log(course);
   const { company, about, id, name, picture, registered } = course;
   return (
     <div>
