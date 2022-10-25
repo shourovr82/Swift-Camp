@@ -9,7 +9,7 @@ const Courses = () => {
   const courses = useLoaderData();
   return (
     <div className=''>
-      <div className=" bg-slate-500 lg:flex justify-between	">
+      <div className=" courses lg:flex justify-between	">
         <div className='relative'>
           <Sidebar courses={courses}></Sidebar>
         </div>
@@ -18,7 +18,7 @@ const Courses = () => {
           <br />
 
           <br />
-          <div className='grid md:grid-cols-3 mx-4 gap-3'>
+          <div className='grid md:grid-cols-3 relative mx-4 gap-3 '>
             {
               courses.map(course => <CourseItem
                 key={course.id}

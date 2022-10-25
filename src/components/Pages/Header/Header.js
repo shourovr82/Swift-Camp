@@ -24,19 +24,22 @@ const Header = () => {
 
   return (
 
-    <div className='  w-full bg-opacity- bg-red-800'>
+    <div className='  w-full bg-opacity- bg-red-800 py-2'>
       <div className="px-4  bg-transparent  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex text-white items-center justify-between ">
-          <div className='relative'>
-            <Link
-              to="/"
-              aria-label="Swift Rexrox"
-              title="Swift Rexrox"
-              className="top-[-30px] w-4/12  "
-            >
-              <img className='w-[140px] ' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
-            </Link>
-          </div>
+
+          <Link
+            to="/"
+            aria-label="Swift Rexrox"
+            title="Swift Rexrox"
+            className="top-[-30px] w-4/12 gap-3"
+          >
+            <div className='flex items-center'>
+
+              <img className='w-[80px] ' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
+              <h1 className='font-bold'>SWIFT CAMP</h1>
+            </div>
+          </Link>
 
 
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -88,14 +91,14 @@ const Header = () => {
                 About us
               </a>
             </li>
-            <li>
+            {/* <li>
               <div className="form-control">
                 <label className="label cursor-pointer">
                   <span className="label-text">Remember me</span>
                   <input type="checkbox" className="toggle toggle-accent" checked />
                 </label>
               </div>
-            </li>
+            </li> */}
           </ul>
           <ul className="flex items-center sm:hidden space-x-8 lg:flex">
             <li className='flex gap-3 items-center '>

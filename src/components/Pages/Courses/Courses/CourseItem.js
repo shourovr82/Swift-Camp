@@ -1,25 +1,23 @@
 import React from 'react';
+import { FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseItem = ({ course }) => {
   // console.log(course);
-  const { company, about, id, name, picture, registered } = course;
+  const { id, name, picture, subtitle } = course;
   return (
-    <div>
-      <div className="card  bg-base-100 shadow-xl">
-        <figure className="px-10 pt-10">
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" className="rounded-xl" />
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">{name}!</h2>
-          <p>{about ? about.slice(0, 100) : ''}</p>
-          <div className="card-actions">
-            <Link to={`/course/${id}`}>
-              <button
-                className="btn btn-primary">See Details</button>
-            </Link>
-
-          </div>
+    <div className="card  relative bg-base-100 shadow-xl">
+      <figure className="">
+        <img src={picture} alt="Shoes" className="rounded-xl h-52 w-full" />
+      </figure>
+      <div className="card-body px-4 py-10 h-56 items-center ">
+        <h2 className="card-title">{name}!</h2>
+        <p>{subtitle ? subtitle.slice(0, 70) + '...' : ''}</p>
+        <div className="card-actions  absolute bottom-0 mb-2">
+          <Link to={`/course/${id}`}>
+            <button
+              className="btn bg-red-800 border-0 text-white font-bold rounded-md  bottom-0">See Details <FaInfoCircle className='ml-3 text-2xl'></FaInfoCircle> </button>
+          </Link>
         </div>
       </div>
     </div>
