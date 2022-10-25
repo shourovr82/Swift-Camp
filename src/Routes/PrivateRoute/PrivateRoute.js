@@ -5,8 +5,17 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const PrivateRoute = ({ children }) => {
 
   const location = useLocation();
-  const { user } = useContext(AuthContext)
+  const { user, loading } = useContext(AuthContext)
   console.log(user);
+
+  if (loading) {
+    return (
+      <div className='flex justify-center mt-10'>
+        <progress className="progress progress-warning bg-red-700 w-56"></progress>
+      </div>
+    )
+  }
+
   if (!user) {
     return <Navigate to='/login' state={{ from: location }} replace></Navigate>
   }

@@ -15,7 +15,6 @@ const SignIn = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
   const navigate = useNavigate();
-  const navigateToLogin = useNavigate();
 
 
 
@@ -37,7 +36,6 @@ const SignIn = () => {
       .then(result => {
         const user = result.user;
         form.reset();
-        console.log(user);
         if (user.emailVerified) {
           // toast.success('Welcome to the Website');
           navigate(from, { replace: true })

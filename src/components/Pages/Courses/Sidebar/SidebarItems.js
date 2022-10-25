@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SidebarItems = ({ course }) => {
   console.log(course);
@@ -11,8 +12,12 @@ const SidebarItems = ({ course }) => {
       <div className="flex flex-col justify-center max-w-3xl  text-center col-span-full lg:col-span-3 lg:text-left">
         <span className=" tracking-wider uppercase  text-xs mt-2 dark:text-violet-400">Step {id} - Nihil</span>
         <span className=" text-teal-900 font-bold md:text-2xl">{name}</span>
-        <button className="btn btn-sm my-2">By Now</button>
+
+        <Link to={`/course/${id}`}>
+          <button className="btn btn-sm my-2">By Now</button>
+        </Link>
       </div>
+
     </div>
 
   );

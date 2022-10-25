@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaFilePdf } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { FaArrowRight, FaFilePdf } from 'react-icons/fa';
+import { Link, useLoaderData } from 'react-router-dom';
 import './Courses.css'
 
 
@@ -8,7 +8,7 @@ const CourseDetails = () => {
   const courseDetails = useLoaderData();
   console.log(courseDetails);
 
-  const { name, about, balance, company, picture, registered } = courseDetails;
+  const { name, about, balance, company, picture, registered, id } = courseDetails;
 
   return (
     <div className='details'>
@@ -42,7 +42,11 @@ const CourseDetails = () => {
         </div>
         <div className='flex justify-center'>
 
-          <button className="btn btn-wide">Checkout</button>
+          <Link to={`/checkout/${id}`}>
+            <button className="btn btn-wide bg-red-800 border-0 shadow-2xl text-white">Get Premium Access   <FaArrowRight className='ml-3'></FaArrowRight> </button>
+          </Link>
+
+
         </div>
       </section>
     </div>

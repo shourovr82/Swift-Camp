@@ -41,8 +41,8 @@ export const routes = createBrowserRouter([
         element: <CourseDetails></CourseDetails>
       },
       {
-        path: '/checkout',
-        element: <CheckOut></CheckOut>
+        path: '/checkout/:id',
+        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
       }
     ]
 

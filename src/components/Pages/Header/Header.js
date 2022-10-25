@@ -65,7 +65,7 @@ const Header = () => {
                 title="Our Courses"
                 className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                Features
+                FAQ
               </Link>
             </li>
             <li>
@@ -75,7 +75,7 @@ const Header = () => {
                 title="Courses pricing"
                 className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                Pricing
+                BLOG
               </a>
             </li>
             <li>
@@ -87,6 +87,14 @@ const Header = () => {
               >
                 About us
               </a>
+            </li>
+            <li>
+              <div className="form-control">
+                <label className="label cursor-pointer">
+                  <span className="label-text">Remember me</span>
+                  <input type="checkbox" className="toggle toggle-accent" checked />
+                </label>
+              </div>
             </li>
           </ul>
           <ul className="flex items-center sm:hidden space-x-8 lg:flex">

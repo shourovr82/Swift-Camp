@@ -10,7 +10,8 @@ const SignUp = () => {
     email: '',
     password: ''
   });
-  const { createUser, verifyEmail, logOutHandle, handleGoogleLogIn, handleGithubLogin } = useContext(AuthContext);
+  const { createUser, verifyEmail, logOutHandle, handleGoogleLogIn, handleGithubLogin,
+    handleUpdateProfile } = useContext(AuthContext);
 
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -48,10 +49,9 @@ const SignUp = () => {
       })
       .catch(e => console.log(e))
 
+
+
   }
-
-
-
   const loginWithGoogle = () => {
     handleGoogleLogIn()
       .then(result => {
@@ -75,6 +75,8 @@ const SignUp = () => {
 
 
 
+
+
   return (
 
     <div className='login-banner'>
@@ -87,12 +89,26 @@ const SignUp = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl form-background">
           <div className="card-body">
             <form onSubmit={handleCreateUser}>
+
+
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text">Full Name</span>
                 </label>
-                <input type="text" placeholder="name" className="input input-bordered" />
+                <input type="text" placeholder="Type Your Full Name" className="input input-bordered" />
               </div>
+
+              <div className="form-control">
+                <label className="label" >
+                  <span className="label-text">Image Url</span>
+                </label>
+                <input
+
+                  name='photoUrl'
+                  type="text" placeholder="Your Image URL" className="input input-bordered" />
+              </div>
+
+
 
               {/*  email*/}
               <div className="form-control">
