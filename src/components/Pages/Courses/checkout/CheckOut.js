@@ -1,12 +1,16 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 
 const CheckOut = () => {
   const checkOutItem = useLoaderData();
   const { id, name, picture, price } = checkOutItem;
+  const { theme } = useContext(AuthContext)
+
 
   return (
-    <div className='flex justify-center dark:bg-gray-900'>
+    <div className={`flex justify-center ${theme}`}>
       <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10  dark:text-gray-100">
         <h2 className="text-xl font-semibold">Check Out</h2>
         <ul className="flex flex-col divide-y divide-gray-700">

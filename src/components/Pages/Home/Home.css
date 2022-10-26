@@ -1,5 +1,5 @@
 .banner-home {
-  background-image: linear-gradient(rgba(22, 9, 1, 0.527), rgba(0, 0, 0, 0.5)), url(../../../Assets/banner.jpg);
+  background-image: linear-gradient(rgba(22, 9, 1, 0.527), rgba(0, 0, 0, 0.7)), url(../../../Assets/banner.jpg);
   background-size: cover;
   background-color: black;
   height: 800px;
@@ -7,8 +7,8 @@
 
 .home-background {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)), url(../../../Assets/banner.jpg);
+    linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.7)), url('../../../Assets/banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;

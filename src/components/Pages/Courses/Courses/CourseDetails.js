@@ -1,8 +1,9 @@
 import React from 'react';
+import { useRef } from 'react';
 import { FaArrowRight, FaFilePdf } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { useReactToPrint } from 'react-to-print';
 import './Courses.css'
-
 
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
@@ -10,8 +11,20 @@ const CourseDetails = () => {
 
   const { name, about, price, Instructor, picture, registered, id } = courseDetails;
 
+  const componetRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componetRef.current,
+    documentTitle: 'emp-data',
+    onAfterPrint: () => alert('Print  Success')
+  })
+
+
+
   return (
-    <div className='details pb-16'>
+    <div className='details pb-16' id='content'
+      ref={componetRef}
+    >
+
       <br />
       <br />
       <br />
@@ -19,12 +32,23 @@ const CourseDetails = () => {
       <br />
 
 
-      <section className="p-6 mx-3 md:mx-10  text-gray-100 border-yellow-700 border-2 rounded-lg shadow-black shadow-xl">
-        <div className='flex justify-center'> <button
-          title='Download Pdf'
-          className='bg-red-800 p-2 rounded-full shadow-xl '>
-          <FaFilePdf className='text-3xl'></FaFilePdf>
-        </button>
+      <section
+
+        className="p-6 mx-3 md:mx-10  text-gray-100 border-yellow-700 border-2 rounded-lg shadow-black shadow-xl">
+
+        {/* download pdf buton */}
+        <div
+
+          className='flex justify-center'>
+          <button
+            onClick={handlePrint}
+
+            title='Download Pdf'
+            className='bg-red-800 p-2 rounded-full shadow-xl '>
+            <FaFilePdf className='text-3xl'></FaFilePdf>
+          </button>
+
+
         </div>
         <div className="container md:flex gap-6 mx-auto text-center items-center justify-between lg:grid-cols-2 xl:grid-cols-5">
           <div className="md:w-2/4 md:px-6  rounded-md  xl:col-span-2 ">

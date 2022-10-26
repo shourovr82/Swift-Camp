@@ -99,6 +99,7 @@ const Header = () => {
                     onChange={toggleTheme}
                     checked={theme === 'dark'}
                     type="checkbox" className="toggle toggle-accent bg-red-900" />
+
                 </label>
               </div>
 
