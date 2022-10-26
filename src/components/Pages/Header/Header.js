@@ -70,28 +70,17 @@ const Header = () => {
 
             <li>
               <Link
-                href="/courses"
-                aria-label="Our Courses"
-                title="Our Courses"
+                to="/faq"
+                aria-label="Our faq"
+                title="Our faq"
                 className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
                 FAQ
               </Link>
             </li>
 
-
+            {/* dark mode light mode */}
             <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                About us
-              </a>
-            </li>
-            <li>
-
               <div className="form-control">
                 <label className="label cursor-pointer">
                   <span className="label-text text-white mr-3">Theme {theme}  </span>
@@ -99,18 +88,10 @@ const Header = () => {
                     onChange={toggleTheme}
                     checked={theme === 'dark'}
                     type="checkbox" className="toggle toggle-accent bg-red-900" />
-
                 </label>
               </div>
-
-              <div>
-                <Form></Form>
-              </div>
-
-
-
-
             </li>
+
           </ul>
           <ul className="flex items-center sm:hidden space-x-8 lg:flex">
             <li className='flex gap-3 items-center '>
@@ -120,8 +101,8 @@ const Header = () => {
                     <button
                       onClick={handleSignOut}
                       className="border md:inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 
-                          hover:bg-[#f5453c]
-                          hover:text-black
+                          hover:bg-red-700
+                          hover:text-white
                           hover:border-[#152f308e]
                           hidden
                           hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none"
@@ -138,7 +119,7 @@ const Header = () => {
                         onMouseLeave={() => setShowProfile(false)}
                         className='w-12 border-spacing-5 border-2  rounded-3xl cursor-pointer'
                         title='Profile'
-                        src={user.photoURL || 'https://i.ibb.co/CWXGr84/ezgif.png'}
+                        src={user.photoURL || 'https://i.ibb.co/BZt8Ky7/depositphotos-43381243-stock-illustration-male-avatar-profile-picture.webp'}
 
                         border="0" alt='' />
                     </Link>
@@ -146,6 +127,7 @@ const Header = () => {
                   :
                   <Link to='/login' className="border md:inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none
                       hover:bg-[#c22c25]
+
                       hover:border-[#00000004]
                       hidden
                       "
@@ -267,21 +249,26 @@ const Header = () => {
 
                       <li>
                         <Link
-                          href="/courses"
-                          aria-label="Our Courses"
-                          title="Our Courses"
+                          to="/faq"
+                          aria-label="Our faq"
+                          title="Our faq"
                           className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           FAQ
                         </Link>
                       </li>
+
+                      {/* dark mode light mode */}
                       <li>
-                        <Link to='/about'
-                          aria-label="About us"
-                          title="About us"
-                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400">
-                          About us
-                        </Link>
+                        <div className="form-control">
+                          <label className="label cursor-pointer">
+                            <span className="label-text text-white mr-3">Theme {theme}  </span>
+                            <input
+                              onChange={toggleTheme}
+                              checked={theme === 'dark'}
+                              type="checkbox" className="toggle toggle-accent bg-red-900" />
+                          </label>
+                        </div>
                       </li>
 
                       <li className='flex justify-evenly'>
@@ -301,7 +288,7 @@ const Header = () => {
                                 Log Out
                               </button>
 
-                              <img className='w-12' src="https://i.ibb.co/CWXGr84/ezgif.png" border="0" alt='' />
+                              <img className='w-12' src="https://i.ibb.co/BZt8Ky7/depositphotos-43381243-stock-illustration-male-avatar-profile-picture.webp" border="0" alt='' />
                             </>
                             :
                             <Link to='/login' className="border inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none bg-[#c22c25]

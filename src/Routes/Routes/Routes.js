@@ -5,6 +5,7 @@ import CheckOut from "../../components/Pages/Courses/checkout/CheckOut";
 import CourseDetails from "../../components/Pages/Courses/Courses/CourseDetails";
 import Courses from "../../components/Pages/Courses/Courses/Courses";
 import ErrorPage from "../../components/Pages/errorpage/ErrorPage";
+import Faq from "../../components/Pages/Faq/Faq";
 import Home from "../../components/Pages/Home/Home";
 import SignIn from "../../components/Pages/Login/SignIn";
 import SignUp from "../../components/Pages/Login/SignUp";
@@ -57,6 +58,10 @@ export const routes = createBrowserRouter([
         path: '/profile',
         element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
+      {
+        path: '/faq',
+        element: <Faq></Faq>
+      }
     ]
 
   }
