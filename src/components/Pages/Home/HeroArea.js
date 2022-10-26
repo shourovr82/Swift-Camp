@@ -1,23 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HeroArea = () => {
   return (
 
     <div>
 
-      <section className=" text-gray-100 ">
-        <div className="container mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
-          <h1 className="text-4xl font-bold leading-none sm:text-5xl">Quisquam necessita vel
-            <span className="text-violet-400">laborum doloribus</span>delectus
+      <section className=" text-gray-100 pb-20">
+        <div className="container mt-28 mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
+          <h1 className="text-3xl font-bold leading-none md:text-5xl">Start learning from
+
+            <span className="text-red-500"> the world’s best </span>institutions
           </h1>
           <p className="px-8 mt-8 mb-12 text-lg">Cupiditate minima voluptate temporibus quia? Architecto beatae esse ab amet vero eaque explicabo!</p>
           <div className="flex flex-wrap justify-center">
-            <button className="px-8 py-3 m-2 text-lg font-semibold rounded bg-violet-400 text-gray-900">Get started</button>
-            <button className="px-8 py-3 m-2 text-lg border rounded text-gray-50 border-gray-700">Learn more</button>
+            <Link to='/courses'>
+              <button className="px-8 py-3 m-2 text-lg hover:bg-red-800 btn-outline font-semibold rounded border text-white ">Explore all courses </button>
+            </Link>
           </div>
         </div>
-        <p>lorem500</p>
+
       </section>
+      <div>
+
+      </div>
+
     </div>
   );
 };

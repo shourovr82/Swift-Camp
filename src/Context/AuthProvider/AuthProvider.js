@@ -4,12 +4,13 @@ import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuth
 import app from '../../authentications/firebase/firebase.config';
 
 export const AuthContext = createContext();
+
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const [theme, setTheme] = useState('dark');
 
   const createUser = (email, password) => {
     setLoading(true);
@@ -54,6 +55,10 @@ const AuthProvider = ({ children }) => {
     });
   }
 
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
+  }
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -77,9 +82,10 @@ const AuthProvider = ({ children }) => {
     handleGithubLogin,
     loading,
     handleUpdateProfile,
-
-
-
+    setLoading,
+    setTheme,
+    theme,
+    toggleTheme,
   }
 
   return (

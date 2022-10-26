@@ -1,20 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import MenuItem from './MenuItem';
-import { FaAlignLeft, FaBeer } from 'react-icons/fa';
 
 
 
 const Header = () => {
-  const { user, logOutHandle } = useContext(AuthContext)
+  const { user, logOutHandle, toggleTheme, setTheme, theme } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [menuActive, setMenuActive] = useState(false);
-
-  const showMenu = () => {
-    setMenuActive(!menuActive)
-  }
-
+  const [showProfile, setShowProfile] = useState(false);
 
   const handleSignOut = () => {
     logOutHandle()
@@ -30,19 +23,20 @@ const Header = () => {
 
           <Link
             to="/"
-            aria-label="Swift Rexrox"
-            title="Swift Rexrox"
+            aria-label="Swift Camp"
+            title="Swift Camp"
             className="top-[-30px] w-4/12 gap-3"
           >
             <div className='flex items-center'>
-
-              <img className='w-[80px] ' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
+              <img className='w-[80px] hidden md:block ' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
               <h1 className='font-bold'>SWIFT CAMP</h1>
             </div>
           </Link>
 
+          {/* For  Large Devices */}
 
           <ul className="flex items-center hidden space-x-8 lg:flex">
+
             <li>
               <Link
                 to="/"
@@ -86,11 +80,6 @@ const Header = () => {
             </li>
 
 
-
-
-
-
-
             <li>
               <a
                 href="/"
@@ -101,14 +90,26 @@ const Header = () => {
                 About us
               </a>
             </li>
-            {/* <li>
+            <li>
+
               <div className="form-control">
                 <label className="label cursor-pointer">
-                  <span className="label-text">Remember me</span>
-                  <input type="checkbox" className="toggle toggle-accent" checked />
+                  <span className="label-text text-white mr-3">Theme {theme}  </span>
+                  <input
+                    onChange={toggleTheme}
+                    checked={theme === 'dark'}
+                    type="checkbox" className="toggle toggle-accent bg-red-900" />
                 </label>
               </div>
-            </li> */}
+
+              <div>
+                <Form></Form>
+              </div>
+
+
+
+
+            </li>
           </ul>
           <ul className="flex items-center sm:hidden space-x-8 lg:flex">
             <li className='flex gap-3 items-center '>
@@ -129,10 +130,17 @@ const Header = () => {
                       Log Out
                     </button>
 
-                    <img className='w-12 rounded-3xl'
-                      src={user.photoURL || 'https://i.ibb.co/CWXGr84/ezgif.png'}
+                    <Link to='/profile'>
 
-                      border="0" alt='' />
+                      <img
+                        onMouseEnter={() => setShowProfile(true)}
+                        onMouseLeave={() => setShowProfile(false)}
+                        className='w-12 border-spacing-5 border-2  rounded-3xl cursor-pointer'
+                        title='Profile'
+                        src={user.photoURL || 'https://i.ibb.co/CWXGr84/ezgif.png'}
+
+                        border="0" alt='' />
+                    </Link>
                   </>
                   :
                   <Link to='/login' className="border md:inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none
@@ -148,11 +156,21 @@ const Header = () => {
 
               }
 
-            </li>
-            <li>
+              {showProfile &&
+                <div className='bg-slate-300 text-black p-4 rounded-md shadow-lg shadow-slate-600 absolute top-14 z-10 duration-500 transition-all'>
+                  <p> Name :
+                    {user?.displayName ? user.displayName : ' No Name found'}
+                  </p>
+                </div>
+              }
+
+
+
+
 
 
             </li>
+
           </ul>
           <div className="lg:hidden">
             <button
@@ -182,22 +200,20 @@ const Header = () => {
 
             {isMenuOpen && (
               <div className="absolute z-10 top-0 left-0 w-full">
-                <div className="p-5 phone-menu border rounded shadow-sm bg-red-900">
+                <div className="p-5 phone-menu border rounded shadow-sm  bg-red-900 text-white ">
                   <div className="flex items-center justify-between mb-4 ">
-                    <div>
-                      <a
-                        href="/"
+                    <div className=''>
+                      <Link
+                        to="/"
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
                       >
-                        {/* <FontAwesomeIcon icon={faCodeCompare}>
 
-                              </FontAwesomeIcon> */}
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Swift Rexrox
+                        <span className="ml-2 text-xl font-bold tracking-wide text-white border px-4 py-3 rounded-md uppercase">
+                          Swift Camp
                         </span>
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <button
@@ -206,7 +222,7 @@ const Header = () => {
                         className="p-2 -mt-2 -mr-2 bg-slate-200  transition duration-200 rounded hover:bg-gray-400 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                        <svg className="w-5 text-red-600" viewBox="0 0 24 24">
                           <path
                             fill="currentColor"
                             d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
@@ -216,49 +232,56 @@ const Header = () => {
                     </div>
                   </div>
                   <nav>
-                    <ul className="space-y-10 text-center text-black">
+                    <ul className="space-y-10 text-center text-white">
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our Courses"
-                          title="Our Courses"
-                          className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        <Link
+                          to="/"
+                          title="Home"
+                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/courses"
+                          title="Courses"
+                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Courses
-                        </a>
+                        </Link>
                       </li>
+
+
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our Courses"
-                          title="Our Courses"
-                          className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Features
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
+                        <Link
+                          to="/blogs"
                           aria-label="Courses pricing"
                           title="Courses pricing"
-                          className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
-                          Pricing
-                        </a>
+                          BLOGS
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link
+                          href="/courses"
+                          aria-label="Our Courses"
+                          title="Our Courses"
+                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          FAQ
+                        </Link>
                       </li>
                       <li>
-                        <a
-                          href="/"
+                        <Link to='/about'
                           aria-label="About us"
                           title="About us"
-                          className="font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
+                          className="font-medium tracking-wide  transition-colors duration-200 hover:text-deep-purple-accent-400">
                           About us
-                        </a>
+                        </Link>
                       </li>
-
-
 
                       <li className='flex justify-evenly'>
                         {
@@ -267,7 +290,7 @@ const Header = () => {
                               <button
                                 onClick={handleSignOut}
                                 className="border inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 
-                                     bg-[#f5453c]
+                                     
                           hover:text-black
                           hover:border-[#152f308e]
                           hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none"

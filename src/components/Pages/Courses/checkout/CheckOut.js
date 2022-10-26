@@ -3,8 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const CheckOut = () => {
   const checkOutItem = useLoaderData();
-  console.log(checkOutItem);
-  const { id, name, picture, subtitle, price } = checkOutItem;
+  const { id, name, picture, price } = checkOutItem;
 
   return (
     <div className='flex justify-center dark:bg-gray-900'>

@@ -9,7 +9,7 @@ const Courses = () => {
   const courses = useLoaderData();
   return (
     <div className=''>
-      <div className=" courses lg:flex justify-between	">
+      <div className=" courses pb-10 md:pb-0 lg:flex justify-between	">
         <div className='relative'>
           <Sidebar courses={courses}></Sidebar>
         </div>

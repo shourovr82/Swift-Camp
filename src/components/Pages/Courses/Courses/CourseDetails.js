@@ -19,16 +19,17 @@ const CourseDetails = () => {
       <br />
 
 
-      <section className="p-6 mx-10 text-gray-100 border-yellow-700 border-2 rounded-lg shadow-xl">
+      <section className="p-6 mx-3 md:mx-10  text-gray-100 border-yellow-700 border-2 rounded-lg shadow-black shadow-xl">
         <div className='flex justify-center'> <button
           title='Download Pdf'
           className='bg-red-800 p-2 rounded-full shadow-xl '>
           <FaFilePdf className='text-3xl'></FaFilePdf>
-        </button></div>
+        </button>
+        </div>
         <div className="container md:flex gap-6 mx-auto text-center items-center justify-between lg:grid-cols-2 xl:grid-cols-5">
-          <div className="w-2/4 px-6  rounded-md  xl:col-span-2 ">
+          <div className="md:w-2/4 md:px-6  rounded-md  xl:col-span-2 ">
             <span className="block mb-2 text-slate-200">Course Details About : </span>
-            <h1 className="text-5xl font-extrabold text-gray-50">{name}</h1>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-gray-50">{name}</h1>
             <div className='flex justify-center items-center gap-4'>
               <p> Instructor : {Instructor}
               </p>
@@ -39,10 +40,7 @@ const CourseDetails = () => {
                 Published : {registered}
               </p>
             </div>
-            <div className='flex justify-center items-center gap-10'>
-              registered
-            </div>
-            <div>
+            <div className='mb-4'>
               {about}
             </div>
           </div>

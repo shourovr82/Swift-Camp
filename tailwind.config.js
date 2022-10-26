@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-image': 'url("..//src/Assets/banner.jpg")'
+        'hero-image': 'url("..//src/Assets/banner.jpg")',
+        'hero-image-background': ' filter: brightness(0.8);'
       }
     },
   },

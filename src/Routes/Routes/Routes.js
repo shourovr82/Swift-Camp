@@ -8,6 +8,7 @@ import ErrorPage from "../../components/Pages/errorpage/ErrorPage";
 import Home from "../../components/Pages/Home/Home";
 import SignIn from "../../components/Pages/Login/SignIn";
 import SignUp from "../../components/Pages/Login/SignUp";
+import Profile from "../../components/Pages/Profile/Profile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -51,7 +52,11 @@ export const routes = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blog></Blog>
-      }
+      },
+      {
+        path: '/profile',
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
+      },
     ]
 
   }
