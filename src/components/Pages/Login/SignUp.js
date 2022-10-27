@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
@@ -59,12 +60,12 @@ const SignUp = () => {
         verifyEmail();
         handleUpdateProfile(userDetails)
         logOutHandle();
-        // toast('Email Verfication  Link has been sent')
+        toast.success('Email Verfication  Link has been sent')
         navigate('/login');
       })
-      .catch(e => console.log(e))
-      .then(result => { })
-      .catch(e => console.log(e))
+      .catch(e => {
+        toast.error(e.message)
+      })
 
   }
 
@@ -74,7 +75,7 @@ const SignUp = () => {
     handleGoogleLogIn()
       .then(result => {
         navigate(from, { replace: true })
-        // toast.succces('Welcome to the Website')
+        toast.succces('Welcome to the Website')
       })
       .catch(e => {
         console.log(e);
@@ -84,7 +85,7 @@ const SignUp = () => {
     handleGithubLogin()
       .then(result => {
         navigate(from, { replace: true })
-        // toast.succces('Welcome to the Website')
+        toast.success('Welcome to the Website')
       })
       .catch(e => {
         console.log(e.message)

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SidebarItems = ({ course }) => {
-  console.log(course);
   const { name, picture, id } = course;
   return (
     <div className=" flex  gap-3 items-center mt-2 p-3">

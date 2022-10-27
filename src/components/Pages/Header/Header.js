@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 const Header = () => {
-  const { user, logOutHandle, toggleTheme, setTheme, theme } = useContext(AuthContext)
+  const { user, logOutHandle, toggleTheme, theme } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
@@ -17,8 +17,8 @@ const Header = () => {
 
   return (
 
-    <div className='  w-full bg-opacity- bg-red-800 py-2'>
-      <div className="px-4  bg-transparent  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    <div className=' w-full bg-opacity- bg-red-800 py-2'>
+      <div className="px-4  bg-transparent  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-0 lg:px-8">
         <div className="relative flex text-white items-center justify-between ">
 
           <Link
@@ -35,8 +35,7 @@ const Header = () => {
 
           {/* For  Large Devices */}
 
-          <ul className="flex items-center hidden space-x-8 lg:flex">
-
+          <ul className="md:flex items-center hidden md:space-x-3 lg:space-x-8 ">
             <li>
               <Link
                 to="/"
@@ -93,7 +92,7 @@ const Header = () => {
             </li>
 
           </ul>
-          <ul className="flex items-center sm:hidden space-x-8 lg:flex">
+          <ul className="hidden items-center sm:hidden space-x-8 md:flex">
             <li className='flex gap-3 items-center '>
               {
                 user ?
@@ -148,16 +147,9 @@ const Header = () => {
                   </p>
                 </div>
               }
-
-
-
-
-
-
             </li>
-
           </ul>
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               aria-label="Open Menu"
               title="Open Menu"

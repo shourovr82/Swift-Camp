@@ -3,7 +3,6 @@ import { FaInfoCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const CourseItem = ({ course }) => {
-  // console.log(course);
   const { id, name, picture, subtitle } = course;
   return (
     <div className="card  relative bg-base-100 shadow-xl">

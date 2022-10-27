@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import './SignIn.css'
@@ -38,13 +39,16 @@ const SignIn = () => {
         form.reset();
         if (user.emailVerified) {
           navigate(from, { replace: true })
+          toast.success('Successfully Logged In!')
         } else {
-          setError('Your email is not Verified')
+          setError('Your email is not Verified');
+          toast.error('Your email is not Verified')
           logOutHandle();
         }
       })
       .catch(e => {
         setError(e.message);
+        toast.error(e.message)
       })
   }
 
@@ -57,7 +61,6 @@ const SignIn = () => {
         navigate(from, { replace: true });
       })
       .catch(e => {
-        console.log(e);
       })
   }
   const loginWithGithub = () => {

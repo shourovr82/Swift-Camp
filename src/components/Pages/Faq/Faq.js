@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
+
 const Faq = () => {
   const { theme } = useContext(AuthContext)
   return (
@@ -13,10 +14,8 @@ const Faq = () => {
 
 
       <div className='flex justify-center  md:px-10 pt-10 w-11/12 mx-auto'>
-
+        {/* faq question and ans */}
         <section>
-
-
           <div tabIndex={0} className="collapse mb-3 collapse-arrow border border-base-300 bg-base-100 rounded-box">
             <div className="collapse-title text-xl font-medium">
               What’s the difference between AI and machine learning?

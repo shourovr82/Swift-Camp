@@ -3,31 +3,32 @@ import { useContext } from 'react';
 import { useRef } from 'react';
 import { FaArrowRight, FaFilePdf } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
-import { useReactToPrint } from 'react-to-print';
+// import { useReactToPrint } from 'react-to-print';
 import './Courses.css'
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
+import ReactToPdf from 'react-to-pdf';
 
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
-
   const { name, about, price, Instructor, picture, registered, id } = courseDetails;
-
-  const componetRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componetRef.current,
-    documentTitle: 'emp-data',
-    onAfterPrint: () => alert('Print  Success')
-  })
-
+  // const componetRef = useRef();
+  // const handlePrint = useReactToPrint({
+  //   content: () => componetRef.current,
+  //   documentTitle: 'emp-data',
+  //   onAfterPrint: () => alert('Print  Success')
+  // })
   const { theme } = useContext(AuthContext)
-
+  const course = courseDetails;
+  const ref = React.createRef();
+  const componentRef = useRef();
 
   return (
-    <div className={theme === 'light' ? 'details pb-16' : 'details-dark pb-16'}
+    <div
+      ref={ref}
+      className={theme === 'light' ? 'details pb-16' : 'details-dark mb-[-30rem]'}
 
-
-      id='content'
-      ref={componetRef}
+    // id='content'
+    // ref={componetRef}
     >
 
       <br />
@@ -35,24 +36,27 @@ const CourseDetails = () => {
       <br />
       <br />
       <br />
-
-
       <section
 
+
         className="p-6 mx-3 md:mx-10  text-gray-100 border-yellow-700 border-2 rounded-lg shadow-black shadow-xl">
-
-        {/* download pdf buton */}
+        {/* download pdf button */}
         <div
-
-          className='flex justify-center'>
-          <button
-            onClick={handlePrint}
-
-            title='Download Pdf'
-            className='bg-red-800 p-2 rounded-full shadow-xl '>
-            <FaFilePdf className='text-3xl'></FaFilePdf>
-          </button>
-
+          className='flex justify-center mb-3 '>
+          <div>
+            <ReactToPdf targetRef={ref} filename={name}
+              x={.5} y={.5} scale={0.6}
+            >
+              {({ toPdf }) => (
+                <button
+                  onClick={toPdf}
+                  className='bg-red-800 flex p-2 px-3 rounded-full shadow-xl '>
+                  <FaFilePdf className='text-3xl' />
+                  Download pdf
+                </button>
+              )}
+            </ReactToPdf>
+          </div>
 
         </div>
         <div className="container md:flex gap-6 mx-auto text-center items-center justify-between lg:grid-cols-2 xl:grid-cols-5">
@@ -85,8 +89,8 @@ const CourseDetails = () => {
 
 
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
