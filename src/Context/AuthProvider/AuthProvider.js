@@ -45,13 +45,13 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   }
 
-  const handleUpdateProfile = ({ userDetails }) => {
-    const name = userDetails.fullName;
-    const photo = userDetails.photoUrl;
-
+  const handleUpdateProfile = (userDetails) => {
+    // const name = newName;
+    // const photoURL = newPhoto;
+    console.log(userDetails);
     return updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo
+      displayName: userDetails.name,
+      photoURL: userDetails.photoURL
     });
   }
 

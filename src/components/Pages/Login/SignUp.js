@@ -10,13 +10,19 @@ const SignUp = () => {
     email: '',
     password: ''
   });
+
+  const [userDetails, setDetails] = useState({
+    name: '',
+    photoURL: ''
+  })
+
+
   const { createUser, verifyEmail, logOutHandle, handleGoogleLogIn, handleGithubLogin,
     handleUpdateProfile } = useContext(AuthContext);
 
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
   const navigate = useNavigate();
-  const navigateToLogin = useNavigate();
 
 
 
@@ -27,6 +33,14 @@ const SignUp = () => {
   const handlePasswordChange = e => {
     setError('');
     setUserinfo({ ...userinfo, password: e.target.value });
+  }
+  const handleNameChange = e => {
+    setError('');
+    setDetails({ ...userDetails, name: e.target.value })
+  }
+  const handleImageChange = e => {
+    setError('');
+    setDetails({ ...userDetails, photoURL: e.target.value })
   }
 
 
@@ -43,15 +57,19 @@ const SignUp = () => {
         console.log(user);
         form.reset();
         verifyEmail();
+        handleUpdateProfile(userDetails)
         logOutHandle();
         // toast('Email Verfication  Link has been sent')
         navigate('/login');
       })
       .catch(e => console.log(e))
-
-
+      .then(result => { })
+      .catch(e => console.log(e))
 
   }
+
+
+
   const loginWithGoogle = () => {
     handleGoogleLogIn()
       .then(result => {
@@ -95,7 +113,10 @@ const SignUp = () => {
                 <label className="label">
                   <span className="label-text">Full Name</span>
                 </label>
-                <input type="text" placeholder="Type Your Full Name" className="input input-bordered" />
+                <input
+                  name='name'
+                  onChange={handleNameChange}
+                  type="text" placeholder="Type Your Full Name" className="input input-bordered" />
               </div>
 
               <div className="form-control">
@@ -103,7 +124,7 @@ const SignUp = () => {
                   <span className="label-text">Image Url</span>
                 </label>
                 <input
-
+                  onChange={handleImageChange}
                   name='photoUrl'
                   type="text" placeholder="Your Image URL" className="input input-bordered" />
               </div>

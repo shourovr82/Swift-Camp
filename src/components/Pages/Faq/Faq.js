@@ -8,11 +8,11 @@ const Faq = () => {
 
     <div>
       <div className='flex justify-center py-10'>
-        <h2 className={theme === 'light' ? 'text-black font-bold text-3xl uppercase' : 'text-white font-bold text-3xl uppercase'}>frequently asked questions </h2>
+        <h2 className={theme === 'light' ? 'text-black text-center font-bold text-3xl uppercase' : 'text-white font-bold text-3xl uppercase text-center'}>frequently asked questions </h2>
       </div>
 
 
-      <div className='flex justify-center md:px-10 pt-10 w-11/12 mx-auto'>
+      <div className='flex justify-center  md:px-10 pt-10 w-11/12 mx-auto'>
 
         <section>
 

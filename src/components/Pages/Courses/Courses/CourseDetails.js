@@ -1,13 +1,14 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useRef } from 'react';
 import { FaArrowRight, FaFilePdf } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import './Courses.css'
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
-  console.log(courseDetails);
 
   const { name, about, price, Instructor, picture, registered, id } = courseDetails;
 
@@ -18,10 +19,14 @@ const CourseDetails = () => {
     onAfterPrint: () => alert('Print  Success')
   })
 
+  const { theme } = useContext(AuthContext)
 
 
   return (
-    <div className='details pb-16' id='content'
+    <div className={theme === 'light' ? 'details pb-16' : 'details-dark pb-16'}
+
+
+      id='content'
       ref={componetRef}
     >
 

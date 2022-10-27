@@ -9,12 +9,36 @@
   margin-top: -100px;
 }
 
+.details-dark {
+  background: #791408;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #a37e02, #c21500);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #bb9518, #8f1709);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  margin-top: -100px;
+}
+
+
+
+
 .courses {
   background: #c21500;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #ffc500, #c21500);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ffc500, #c21500);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+}
+
+.courses-dark {
+  background: #971203;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ca9d0a, #860f02);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #bd9511, #971a0d);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100%;
 }

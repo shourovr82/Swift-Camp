@@ -28,7 +28,7 @@ const Header = () => {
             className="top-[-30px] w-4/12 gap-3"
           >
             <div className='flex items-center'>
-              <img className='w-[80px] hidden md:block ' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
+              <img className='w-[80px] hidden md:block' src="https://i.ibb.co/6n13tsP/image-1.png" alt="title" />
               <h1 className='font-bold'>SWIFT CAMP</h1>
             </div>
           </Link>
@@ -117,8 +117,8 @@ const Header = () => {
                       <img
                         onMouseEnter={() => setShowProfile(true)}
                         onMouseLeave={() => setShowProfile(false)}
-                        className='w-12 border-spacing-5 border-2  rounded-3xl cursor-pointer'
-                        title='Profile'
+                        className='w-[45px] h-[45px]  border-spacing-5 border-2  rounded-3xl cursor-pointer'
+                        title={user.displayName}
                         src={user.photoURL || 'https://i.ibb.co/BZt8Ky7/depositphotos-43381243-stock-illustration-male-avatar-profile-picture.webp'}
 
                         border="0" alt='' />
@@ -140,9 +140,11 @@ const Header = () => {
               }
 
               {showProfile &&
-                <div className='bg-slate-300 text-black p-4 rounded-md shadow-lg shadow-slate-600 absolute top-14 z-10 duration-500 transition-all'>
-                  <p> Name :
-                    {user?.displayName ? user.displayName : ' No Name found'}
+                <div className='bg-slate-300 text-black p-4 rounded-md shadow-lg shadow-slate-600 absolute top-14  w-[200px] duration-500 transition-all flex justify-center text-center'>
+                  <p className='font-mono'> Name : <br />
+                    <span className='font-bold uppercase'>
+                      {user?.displayName ? user.displayName : ' No Name found'}
+                    </span>
                   </p>
                 </div>
               }
@@ -280,15 +282,17 @@ const Header = () => {
                                 className="border inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 
                                      
                           hover:text-black
-                          hover:border-[#152f308e]
+                          hover:border-white
                           hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none"
                                 aria-label="Log Out"
                                 title="Log Out"
                               >
                                 Log Out
                               </button>
+                              <Link to='/profile'>
+                                <img className='w-12 h-12 border rounded-full' src={user?.photoURL ? user.photoURL : "https://i.ibb.co/BZt8Ky7/depositphotos-43381243-stock-illustration-male-avatar-profile-picture.webp"} border="0" alt='' />
+                              </Link>
 
-                              <img className='w-12' src="https://i.ibb.co/BZt8Ky7/depositphotos-43381243-stock-illustration-male-avatar-profile-picture.webp" border="0" alt='' />
                             </>
                             :
                             <Link to='/login' className="border inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 uppercase focus:shadow-outline focus:outline-none bg-[#c22c25]

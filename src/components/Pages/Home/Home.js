@@ -1,11 +1,14 @@
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import HeroArea from './HeroArea';
 import './Home.css'
 
 const Home = () => {
+  const { theme } = useContext(AuthContext);
   return (
     <div className=' flex items-center justify-center pt-28'>
-      <div className='home-background uppercase text-center text-white font-extrabold'>
+      <div className={theme === 'light' ? 'home-background uppercase text-center text-white font-extrabold' : 'home-background-dark uppercase text-center text-white font-extrabold'}>
         <HeroArea></HeroArea>
         <div>
           <section className="p-4 lg:p-8 dark:bg-slate-300 dark:text-gray-100">

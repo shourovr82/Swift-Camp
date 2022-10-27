@@ -10,22 +10,22 @@ const CheckOut = () => {
 
 
   return (
-    <div className={`flex justify-center ${theme}`}>
-      <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10  dark:text-gray-100">
+    <div className={theme === 'light' ? 'flex  mt-4 px-3  justify-center ' : 'flex  mt-4 px-3 justify-center'}>
+      <div className={theme === 'light' ? 'flex flex-col bg-slate-400 rounded-xl max-w-3xl p-6 space-y-4 sm:p-10  text-black' : 'flex flex-col border rounded-xl max-w-3xl p-6 space-y-4 sm:p-10  text-gray-100'}>
         <h2 className="text-xl font-semibold">Check Out</h2>
         <ul className="flex flex-col divide-y divide-gray-700">
           <li className="flex flex-col  justify-center py-6 sm:flex-row sm:justify-between">
-            <div className="flex items-center w-full space-x-2 sm:space-x-4">
-              <img className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src={picture} alt="Polaroid camera" />
+            <div className="flex flex-col  md:flex-row items-center w-full space-x-2 sm:space-x-4">
+              <img className="flex-shrink-0 object-cover md:w-20  md:h-20 dark:border-transparent rounded outline-none mb-4 md:mb-0 bg-gray-500" src={picture} alt="Polaroid camera" />
               <div className="flex flex-col justify-between w-full pb-4">
                 <div className="flex justify-between  w-full pb-2 space-x-2">
                   <div className="space-y-1">
                     <h3 className="text-lg font-semibold leading-snug sm:pr-8">{name}</h3>
-                    <p className="text-sm dark:text-gray-400">Classic</p>
+                    <p className={theme === 'light' ? 'text-sm text-black' : 'text-sm text-gray-400'}>Classic</p>
                   </div>
                   <div className="text-right">
                     <p className="text-lg font-semibold">{price}</p>
-                    <p className="text-sm line-through dark:text-gray-600">30%</p>
+                    <p className={theme === 'light' ? 'text-sm line-through text-black' : 'text-white text-sm line-through'}>30%</p>
                   </div>
                 </div>
               </div>
@@ -41,7 +41,7 @@ const CheckOut = () => {
         <div className="flex justify-center space-x-4">
           <Link to='/courses'>
             <button type="button" className="px-6 py-2 border rounded-md dark:border-red-700">Back
-              <span className="">to Course</span>
+              <span className=""> To Course</span>
             </button>
           </Link>
 
