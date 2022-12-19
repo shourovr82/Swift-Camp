@@ -3,7 +3,8 @@ import './footer.css'
 
 const Footer = () => {
   return (
-    <div className='bg-black mt-[38rem] md:mt-[30rem]    '>
+    <div className='bg-black      '>
+
       <footer className="footer p-10   text-white">
         <div>
           <span className="footer-title">Services</span>

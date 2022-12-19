@@ -7,8 +7,10 @@ import './Home.css'
 const Home = () => {
   const { theme } = useContext(AuthContext);
   return (
-    <div className=' flex items-center justify-center pt-28 '>
+    <div className=' flex items-center justify-center  '>
+
       <div className={theme === 'light' ? 'home-background uppercase text-center text-white font-extrabold' : 'home-background-dark uppercase text-center text-white font-extrabold'}>
+
         <HeroArea></HeroArea>
         <div>
 

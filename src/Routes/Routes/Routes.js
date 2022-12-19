@@ -28,7 +28,6 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/courses',
-        loader: () => fetch('https://swift-camp-server.vercel.app/courses'),
         element: <Courses></Courses>
       },
       {

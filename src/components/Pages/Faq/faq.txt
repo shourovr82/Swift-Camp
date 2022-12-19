@@ -1,0 +1,7 @@
+  REACT_APP_apiKey=AIzaSyB_W0qCoLFkn1wHyARKGptc9b48yMTi9QY
+  REACT_APP_authDomain=swift-camp-47b64.firebaseapp.com
+  REACT_APP_projectId=swift-camp-47b64
+  REACT_APP_storageBucket=swift-camp-47b64.appspot.com
+  REACT_APP_messagingSenderId=351451474819
+  REACT_APP_appId=1:351451474819:web:8b7cd7949ab80df323a4b6
+  
