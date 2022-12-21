@@ -6,7 +6,7 @@ const HeroArea = () => {
 
     <div>
 
-      <section className=" text-gray-100 w-4/5 mx-auto h-[100vh] flex items-center">
+      <section className=" text-gray-100 w-4/5 mx-auto h-[106vh] flex items-center">
         <div className="container mx-auto flex flex-col items-center px-4  text-center ">
           <h1 className="text-2xl font-bold leading-none md:text-5xl font-serif">Start learning from
             the world’s best  institution

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import Testimonial from '../Testimonial/Testimonial';
 import HeroArea from './HeroArea';
 import './Home.css'
 
@@ -9,7 +10,8 @@ const Home = () => {
   return (
     <div className=' flex items-center justify-center  '>
 
-      <div className={theme === 'light' ? 'home-background uppercase text-center text-white font-extrabold' : 'home-background-dark uppercase text-center text-white font-extrabold'}>
+      <div className={theme === 'light' ? 'home-background  uppercase text-center text-white font-extrabold' : 'home-background-dark uppercase text-center text-white font-extrabold'}>
+
 
         <HeroArea></HeroArea>
         <div>
@@ -58,6 +60,40 @@ const Home = () => {
             </div>
           </section>
         </div>
+        <div>
+          <Testimonial></Testimonial>
+        </div>
+        <div className="carousel w-full">
+          <div id="slide1" className="carousel-item relative w-full">
+            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide4" className="btn btn-circle">❮</a>
+              <a href="#slide2" className="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide2" className="carousel-item relative w-full">
+            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide1" className="btn btn-circle">❮</a>
+              <a href="#slide3" className="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide3" className="carousel-item relative w-full">
+            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide2" className="btn btn-circle">❮</a>
+              <a href="#slide4" className="btn btn-circle">❯</a>
+            </div>
+          </div>
+          <div id="slide4" className="carousel-item relative w-full">
+            <img src="https://placeimg.com/800/200/arch" className="w-full" />
+            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide3" className="btn btn-circle">❮</a>
+              <a href="#slide1" className="btn btn-circle">❯</a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
 
