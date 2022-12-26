@@ -57,11 +57,9 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        verifyEmail();
-        handleUpdateProfile(userDetails)
-        logOutHandle();
-        toast.success('Email Verfication  Link has been sent')
-        navigate('/login');
+        handleUpdateProfile(userDetails);
+        navigate('/');
+        toast.success('Successfully Logged In');
       })
       .catch(e => {
         toast.error(e.message)
@@ -120,15 +118,6 @@ const SignUp = () => {
                   type="text" placeholder="Type Your Full Name" className="input input-bordered" />
               </div>
 
-              <div className="form-control">
-                <label className="label" >
-                  <span className="label-text">Image Url</span>
-                </label>
-                <input
-                  onChange={handleImageChange}
-                  name='photoUrl'
-                  type="text" placeholder="Your Image URL" className="input input-bordered" />
-              </div>
 
 
 

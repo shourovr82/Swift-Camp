@@ -39,7 +39,7 @@ const CourseDetails = () => {
       <section
 
 
-        className="p-6 mx-3 md:mx-10  text-gray-100 border-yellow-700 border-2 rounded-lg shadow-black shadow-xl">
+        className="p-6 mx-3 md:mx-10  text-gray-100 border-[#f7b990bb] border rounded-lg shadow-black shadow-xl">
         {/* download pdf button */}
         <div
           className='flex justify-center mb-3 '>

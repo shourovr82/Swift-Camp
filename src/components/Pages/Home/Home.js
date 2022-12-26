@@ -19,9 +19,16 @@ const Home = () => {
           <section className="p-4 lg:p-8 dark:bg-slate-300 dark:text-gray-100">
             <div className="container mx-auto space-y-12">
               <div className="flex flex-col overflow-hidden bg-white shadow-xl rounded-md  lg:flex-row-reverse">
-                <img src="https://i.ibb.co/k3MxRqP/4-B786524-9822-47-E5-BE20-77-F41-AADF63-B.png" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
+
+
+                <div className='  flex items-center  justify-center gap-5'>
+                  <div className='bg-red-900 p-28 rounded-r-xl rounded-t-none w-full'> <h1 className=' '>Swift Camp</h1></div>
+
+                  <div className='bg-white w-full '><h2 className='text-slate-500 font-semibold text-xl'>Google <br />Cloud</h2></div>
+                </div>
+
                 <div className="flex flex-col justify-center flex-1 p-6 ">
-                  <span className="text-xs uppercase dark:text-black">Join, it's free</span>
+                  <span className="text-xs uppercase dark:text-black">Join, First</span>
                   <h3 className="text-red-800 text-3xl mt-3 font-bold">Cloud skills are in higher demand than any other area of technology</h3>
                   <p className="my-6 dark:text-black font-semibold">Train for high growth cloud jobs with the Google Cloud Computing Foundations Professional Certificate program</p>
                   <button type="button" className="self-start">Action</button>
@@ -35,7 +42,7 @@ const Home = () => {
             <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
               <div className="flex flex-col justify-start m-2 lg:m-6">
                 <p className="text-4xl font-bold leading-none lg:text-6xl">50+</p>
-                <p className="text-sm sm:text-base">Clients</p>
+                <p className="text-sm sm:text-base">Students</p>
               </div>
               <div className="flex flex-col justify-start m-2 lg:m-6">
                 <p className="text-4xl font-bold leading-none lg:text-6xl">89K</p>
@@ -63,36 +70,7 @@ const Home = () => {
         <div>
           <Testimonial></Testimonial>
         </div>
-        <div className="carousel w-full">
-          <div id="slide1" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" className="btn btn-circle">❮</a>
-              <a href="#slide2" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide2" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide1" className="btn btn-circle">❮</a>
-              <a href="#slide3" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide3" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide2" className="btn btn-circle">❮</a>
-              <a href="#slide4" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-          <div id="slide4" className="carousel-item relative w-full">
-            <img src="https://placeimg.com/800/200/arch" className="w-full" />
-            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide3" className="btn btn-circle">❮</a>
-              <a href="#slide1" className="btn btn-circle">❯</a>
-            </div>
-          </div>
-        </div>
+
 
       </div>
 
